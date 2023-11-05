@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AMP Predictions</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <script>
+        /*function removeLineBreaks() {
+            var textarea = document.getElementById('fasta_input');
+            textarea.value = textarea.value.replace(/[\r\n]+/g, '');
+        */
+    </script>
+</head>
+<body>
+    <h1>Anti-Microbial Peptide Prediction ConvNet</h1>
+    <hr>
+    <form method="POST" action="/process_text">
+        <h3>Input peptide sequence(s) in FASTA format:</h3>
+        <textarea name="text_input" id="text_input" class="text_box" rows="10" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <br>
+    <p>Created by Samuel Palframan - <a href="https://github.com/PianoPalf/anti-microbial-neural-network.git">GitHub</a></p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+</body>
+</html>

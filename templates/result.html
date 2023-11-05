@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+    <h1>AMP Prediction Results</h1><hr>
+    <div class="table">
+    <h3>Generated using a Deep Convolutional Neural Network with TensorFlow and Keras.</h3>
+        <ul>
+            {{ tables[0]|safe }}
+        </ul>
+    </div>
+    <br>
+    <div class="chart-container">
+        
+        <div id="scatter-chart">
+            {{ chart_div|safe }}
+        </div>
+    </div>
+</body>
+</html>

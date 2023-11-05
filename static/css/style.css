@@ -1,0 +1,98 @@
+/* Apply the "Helvetica Light" font to all text */
+body {
+    font-family: "Helvetica Neue Light", "Helvetica", sans-serif;
+    font-weight: 300; /* 300 is the font weight for "Helvetica Light" */
+    background-image: url('b_and_white_protein.png'); 
+    background-size: 50% auto;
+    background-size: cover; 
+    background-attachment: fixed; /* Optionally, keep the background fixed */
+    background-color: rgb(255, 255, 255); /* Set the background color with opacity */
+}
+
+/* Style the heading */
+h1 {
+    font-weight: 300;
+    text-align: left; 
+}
+
+/* Style the form container */
+form {
+    font-weight: 300; 
+}
+
+/* Style the text input area */
+textarea {
+    font-weight: 300; 
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    font-weight: 300; 
+}
+
+/* Style the h3 text */
+h3 {
+    font-weight: 300; 
+}
+
+.text_box {
+    background-color: rgb(242, 242, 242, 0.8)
+}
+
+/* styles.css */
+table.dataframe {
+    width: 20%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    float: left;
+    background-color: rgb(242, 242, 242, 0.8)
+}
+
+table.dataframe th, table.dataframe td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table.dataframe th {
+    background-color: #f2f2f2;
+}
+
+/* Set specific column widths */
+table.dataframe th:first-child,
+table.dataframe td:first-child {
+    width: 20%; /* Adjust the width as needed */
+}
+
+table.dataframe th:nth-child(2),
+table.dataframe td:nth-child(2) {
+    width: 40%; /* Adjust the width as needed */
+}
+
+table.dataframe th {
+    text-align: left;
+}
+
+.table {
+    
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+}
+.chart-container {
+    width: 90%;
+    margin-left: 40px; /* Adjust the left margin as needed */
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+}
+
+#myBox {
+    width: 50%;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+  }
