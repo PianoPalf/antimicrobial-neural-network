@@ -3,7 +3,7 @@ TensorFlow and Keras Deep Convolutional Neural Network (ConvNet) that identifies
 
 Created and submitted as final project for Monash University Data Analytics Boot Camp (November 2023).
 
-![amp_cnn](Resources/Images/convnet_banner_2.png)
+![amp_cnn](Resources/Images/convnet_banner.jpg)
 
 ## Table of Contents
 
@@ -34,7 +34,7 @@ Created and submitted as final project for Monash University Data Analytics Boot
 
 - `One-Hot-Encodes` amino acid sequences into 2D Matrix of binary values to facilitate Convolutional Neural Network modelling.
 
-- `Pads` all 2D Matrices to 198 rows, the maximum peptide size the model will be trained on, to normalise the Training and Testing data. 
+- Normalises Training and Testing data by `Padding` all 2D Matrices to 198 rows (i.e 198 amino acids), the largest peptide in the Training and Testing dataset.
 
 - Splits Feature (X) and Label (y) into Training and Test data using `train_test_split()` module from machine learning library `scikit-learn`:
   - Training data (75 % of the total dataset):
@@ -46,13 +46,17 @@ Created and submitted as final project for Monash University Data Analytics Boot
 
 - Converts input data into `NumPy Array`.
 
-- Defines `TensorFlow Keras` Convolutional model (LeNet Diagram):
+- Defines `TensorFlow Keras` Convolutional model. 
+
+- **Simplified LeNet Diagram**:
 
   ![AMP_CNN_LeNet](Resources/Images/AMP_CNN_LeNet.png)
 
 - Compiles Model with `binary_crossentropy` loss handling and `adam` optimizer using `accuracy` as metric.
 
 - Trains and Tests the Model with `epochs = 5`.
+
+- **Accuracy and Loss of Train and Test data**:
 
   ![train_test](Resources/Images/training_5_epochs_&_dropout.png)
 
@@ -77,6 +81,8 @@ Created and submitted as final project for Monash University Data Analytics Boot
 - Generates `Classification Report` to assess `Precision, Recall, F1-score and Accuracy`.
 
 - Visualises Validation dataset that contained discrete positive (AMP) and negative (Non-AMP) sequences.
+
+- **Putative and Confirmed AMP / Non-AMPs predicted by AMP ConvNet**:
 
   ![validation_charts](Resources/Images/validation_5_epochs_&_dropout.png)
 
@@ -251,13 +257,20 @@ model_fit = model.fit(X_train, y_train, epochs=5, validation_data=(X_test, y_tes
 
 ## References
 
-- LeNet Diagram generation:
-  - http://alexlenail.me/NN-SVG/LeNet.html
+- **Data Collation**:
+  - Training and Testing data:
+    - [Co-AMPpred - Singh et. al. 2021](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04305-2) 
+    - [AI4AMP - Lin et al. 2021](https://pubmed.ncbi.nlm.nih.gov/34783578/)
+  
+  - Validation data:
+    - [AMPlify - Li et al. 2022](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-022-08310-4)
+  
+- **LeNet Diagram generation**:
+  - [NN-SVG - LeNail 2019](https://web.archive.org/web/20190428110423id_/https://www.theoj.org/joss-papers/joss.00747/10.21105.joss.00747.pdf)
+- **Functions** created with assistance from [OpenAI (2023) **ChatGPT**](https://www.openai.com/chatgpt) - Version: GPT-3.5 - November 2023: 
+  - `one_Hot_encode(sequence)`; and 
+  - `pad_array(arr_list, desired_len)`
 
-- `one_Hot_encode(sequence)` and `pad_array(arr_list, desired_len)` Functions were created with assistance from ChatGPT:
-  - OpenAI. (2023). ChatGPT. https://www.openai.com/chatgpt
-    - Version: GPT-3.5 - November 2023
-
-- Code, in general, was adapted from Monash University Data Analytics Boot Camp 2023 course learning material.
+- Code, where appropriate, was adapted from Monash University Data Analytics Boot Camp 2023 course learning material.
 
 Created and written by Samuel Palframan - November 2023.
