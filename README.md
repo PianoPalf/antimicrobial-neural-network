@@ -8,7 +8,7 @@ Created and submitted as final project for Monash University Data Analytics Boot
 
 ## Preface
 
-Antibiotic-resistant bacteria have become one of the greatest threats to human health globally. By the year 2050, there will be more deaths attributed to antibiotic-resistant bacterial infections than cancer annually. Our overuse and over-reliance on antibiotics has, over time, dramatically reduced their effectiveness and overall efficacy ([Murray et al. 2022](https://www.sciencedirect.com/science/article/pii/S0140673621027240?pes=vor)). As such, the development of new and alternative antimicrobial therapies is essential to human health long-term. 
+Antibiotic-resistant bacteria have become one of the greatest threats to human health globally. By the year 2050, there will be more deaths attributed to antibiotic-resistant bacterial infections than cancer annually. Our overuse and over-reliance on antibiotics has, over time, dramatically reduced their effectiveness and efficacy ([Murray et al. 2022](https://www.sciencedirect.com/science/article/pii/S0140673621027240?pes=vor)). As such, the development of new and alternative antimicrobial therapies is essential to human health long-term. 
 
 Antimicrobial peptides (AMPs) possess broad-spectrum antimicrobial properties and are considered a promising substitute for current antibiotics ([Xuan et al. 2023](https://www.sciencedirect.com/science/article/pii/S1368764623000377#bib84)). However, screening unknown and/or putative AMPs in wet laboratories can be time-consuming, expensive and difficult to implement large-scale. An alternative and more rapid approach is to use Deep Neural Network Machine Learning to identify peptides that possess antimicrobial properties based on various features. 
 
