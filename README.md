@@ -1,12 +1,22 @@
-# Anti-Microbial Peptide Prediction
-TensorFlow and Keras Deep Convolutional Neural Network (ConvNet) that identifies Anti-Microbial Peptides (AMPs) based on Amino Acid Sequences.
+# Antimicrobial Peptide Prediction
+TensorFlow and Keras Deep Convolutional Neural Network (ConvNet) that identifies Antimicrobial Peptides (AMPs) based on Amino Acid Sequences.
 
-Created and submitted as final project for Monash University Data Analytics Boot Camp (November 2023).
+Created and submitted as final project for Monash University Data Analytics Boot Camp (November 2023). 
+
 
 ![amp_cnn](Resources/Images/convnet_banner.jpg)
 
+## Preface
+
+Antibiotic-resistant bacteria have become one of the greatest threats to human health globally. By the year 2050, there will be more deaths related to infections by antibiotic-resistant bacteria than cancer. Our overuse and over-reliance on antibiotics has, over time, dramatically reduced their effectiveness and overall efficacy ([Murray et al. 2022](https://www.sciencedirect.com/science/article/pii/S0140673621027240?pes=vor)). As such, the development of new and alternative antimicrobial therapies are essential to human health long-term. 
+
+Antimicrobial peptides (AMPs) possess broad-spectrum antimicrobial properties and are considered a promising substitute for current antibiotics ([Xuan et al. 2023](https://www.sciencedirect.com/science/article/pii/S1368764623000377#bib84)). However, screening unconfirmed and/or putative AMPs in wet laboratories can be time-consuming, expensive and difficult to implement large-scale. An alternative and more rapid approach is to use Deep Neural Network Machine Learning to identify peptides that possess antimicrobial properties based on various features. 
+
+This project uses a Deep Convolutional Neural Network Model to classify peptides as AMPs or Non-AMPs based on amino acid sequence. 
+
 ## Table of Contents
 
+- [Instructions](#instructions)
 - [General info](#general-info)
 - [Technologies](#technologies)
 - [Screenshots](#screenshots)
@@ -14,9 +24,18 @@ Created and submitted as final project for Monash University Data Analytics Boot
 - [Repository structure](#repository-structure)
 - [References](#references)
 
+## Instructions
+
+1. Download Repository.
+2. Using Mac/Linux Terminal or Windows Command Prompt:
+   - Change working directory to newly dow Repository folder (`antimicrobial-neural-network-main`.
+   - Run `app.py` file.
+3. Open Browser and navigate to: `http://127.0.0.1:5000/`
+4. Input FASTA amino acid sequence.
+
 ## General info
 
-### nn_anti-microbials_data_compilation.ipynb
+### AMP_ConvNet_data_compilation.ipynb
 
 - Reads in `FASTA` files and converts data to Python `Pandas` DataFrames using `Biopython` library.
 - Creates new `Anti_Microbial` Column for each DataFrame and assigns `1` for AMPs and `0` for Non-AMPs.
@@ -30,7 +49,7 @@ Created and submitted as final project for Monash University Data Analytics Boot
   - `validation_positive.csv` and `validation_negative.csv` files were also generated to facilitate additional Validations.
 
 
-### nn_anti-microbials_deep_learning.ipynb
+### AMP_ConvNet_deep_learning.ipynb
 
 - `One-Hot-Encodes` amino acid sequences into 2D Matrix of binary values to facilitate Convolutional Neural Network modelling.
 
@@ -62,7 +81,7 @@ Created and submitted as final project for Monash University Data Analytics Boot
 
 - Test Accuracy: `93.69 %` / Test Loss: `0.18`
 
-### nn_anti-microbials_deep_learning_validation.ipynb
+### AMP_ConvNet_deep_learning_validation.ipynb
 
 - Reads in `CSV` files as Pandas DataFrames.
 
@@ -86,9 +105,9 @@ Created and submitted as final project for Monash University Data Analytics Boot
 
   ![validation_charts](Resources/Images/validation_5_epochs_&_dropout.png)
 
-### AMP_functions.py
+### AMP_ConvNet_functions.py
 
-- Defines **Functions** called in Python Flask file (`app_AMP_CNN.py`):
+- Defines **Functions** called in Python Flask file (`app.py`):
   - `process_fasta(user_input)`: parses FASTA Input from user and converts it to Pandas DataFrame.
   - `bin_aa(sequence)`: bins Amino Acids based on Amino Acid Murphy 8 categories (unused in final version).
   - `calc_molecular_weight(sequence)`: calculates Molecular Weights (in kDa) of Amino Acid Sequences (as pd.Series).
@@ -99,7 +118,7 @@ Created and submitted as final project for Monash University Data Analytics Boot
   - `create_bubble_chart(df)`: creates Plotly Bubble Chart to visualise AMP Score, MW and pI in results.html.
 
 
-### app_AMP_CNN.py
+### app.py
 
 - Takes `FASTA Input sequence(s)` from User via `index.html`.
 - Serves Input data to `/process_text` app route where all Functions in `AMP_functions.py` are called.
@@ -123,6 +142,9 @@ Created and submitted as final project for Monash University Data Analytics Boot
 ### style.css
 
 - Contains custom formatting for `index.html`, `result.html` and `error.html`.
+
+### Python Folder
+- Contains all `.ipynb` and `.py` files (except `app.py`)
 
 ### HDF5_files Folder
 
@@ -169,7 +191,7 @@ Project created and run using:
 ## Code example
 
 ```python
-## Code Snippet from nn_anti-microbials_deep_learning.ipynb
+## Code Snippet from AMP_ConvNet_deep_learning.ipynb
 #################################################
 
 # Build Convolutional Neural Network
@@ -209,50 +231,56 @@ model_fit = model.fit(X_train, y_train, epochs=5, validation_data=(X_test, y_tes
 ## Repository structure
 
 ```
-└── anti-microbial-neural-network
-    ├── AMP_CNN.png
-    ├── AMP_functions.py
-    ├── HDF5_files
-    │   └── convolutional_nn_1.h5
-    ├── README.md
-    ├── Resources
-    │   ├── AMPlify_AMP_test_common.fa
-    │   ├── AMPlify_non_AMP_test_balanced.fa
-    │   ├── Images
-    │   │   ├── AMP_CNN_LeNet.png
-    │   │   ├── convnet_banner.jpg
-    │   │   ├── convnet_banner_2.png
-    │   │   ├── convnet_banner_3.png
-    │   │   ├── convnet_banner_4.png
-    │   │   ├── index_screenshot.png
-    │   │   ├── result_screenshot.png
-    │   │   ├── training_10_epochs.png
-    │   │   ├── training_5_epochs_&_dropout.png
-    │   │   └── validation_5_epochs_&_dropout.png
-    │   ├── db90_negativeamp.fasta
-    │   ├── db90_positiveamp.fasta
-    │   ├── peptides.csv
-    │   ├── test_negative_3528.fasta
-    │   ├── test_postive_3528.fasta
-    │   ├── train_negative_final.fasta
-    │   ├── train_positive_final.fasta
-    │   ├── validation.csv
-    │   ├── validation_negative.csv
-    │   └── validation_positive.csv
-    ├── app_AMP_CNN.py
-    ├── nn_anti-microbials_data_compilation.ipynb
-    ├── nn_anti-microbials_deep_learning.ipynb
-    ├── nn_anti-microbials_deep_learning_validation.ipynb
-    ├── static
-    │   └── css
-    │       ├── b_and_white_protein.png
-    │       └── style.css
-    └── templates
-        ├── error.html
-        ├── index.html
-        └── result.html
+anti-microbial-neural-network
+│
+├── AMP_ConvNet_summary.md
+├── HDF5_files
+│   └── convolutional_nn_1.h5
+├── Python
+│   ├── AMP_ConvNet_data_compilation.ipynb
+│   ├── AMP_ConvNet_deep_learning.ipynb
+│   ├── AMP_ConvNet_deep_learning_validation.ipynb
+│   ├── AMP_ConvNet_functions.py
+│   └── __pycache__
+│       ├── AMP_ConvNet_functions.cpython-310.pyc
+│       └── AMP_functions.cpython-310.pyc
+├── README.md
+├── Resources
+│   ├── AMPlify_AMP_test_common.fa
+│   ├── AMPlify_non_AMP_test_balanced.fa
+│   ├── Images
+│   │   ├── AMP_CNN_LeNet.png
+│   │   ├── AMP_CNN_structure.png
+│   │   ├── convnet_banner.jpg
+│   │   ├── convnet_banner_2.png
+│   │   ├── convnet_banner_3.png
+│   │   ├── convnet_banner_4.png
+│   │   ├── index_screenshot.png
+│   │   ├── result_screenshot.png
+│   │   ├── training_10_epochs.png
+│   │   ├── training_5_epochs_&_dropout.png
+│   │   └── validation_5_epochs_&_dropout.png
+│   ├── db90_negativeamp.fasta
+│   ├── db90_positiveamp.fasta
+│   ├── peptides.csv
+│   ├── test_negative_3528.fasta
+│   ├── test_postive_3528.fasta
+│   ├── train_negative_final.fasta
+│   ├── train_positive_final.fasta
+│   ├── validation.csv
+│   ├── validation_negative.csv
+│   └── validation_positive.csv
+├── app.py
+├── static
+│   └── css
+│       ├── b_and_white_protein.png
+│       └── style.css
+└── templates
+    ├── error.html
+    ├── index.html
+    └── result.html
 
-8 directories, 35 files
+9 directories, 39 files
 ```
 
 ## References

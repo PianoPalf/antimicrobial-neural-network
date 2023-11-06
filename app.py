@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 import plotly.io as pio
-import AMP_functions
+from Python import AMP_ConvNet_functions
 
 # Set Display Options to prevent Exponential Notation
 pd.set_option('display.float_format', '{:.2f}'.format)
@@ -37,25 +37,25 @@ def process_text():
         user_text = request.form['text_input']
         
         # Process FASTA input from User into Pandas DataFrame
-        user_text_df = AMP_functions.process_fasta(user_text)
+        user_text_df = AMP_ConvNet_functions.process_fasta(user_text)
 
         # Calculate Molecular Weight of Peptides
-        user_text_df['MW (kDa)'] = AMP_functions.calc_molecular_weight(user_text_df['Sequence'])
+        user_text_df['MW (kDa)'] = AMP_ConvNet_functions.calc_molecular_weight(user_text_df['Sequence'])
 
         # Calculate Isoelectric Point (pI) of Peptides
-        user_text_df['Isoelectric Point (pI)'] = AMP_functions.calculate_pI(user_text_df['Sequence'])
+        user_text_df['Isoelectric Point (pI)'] = AMP_ConvNet_functions.calculate_pI(user_text_df['Sequence'])
         
         # Calculate Hydrophobicity (Kyte-Doolittle Scores) for each Amino Acid
-        user_text_df['Hydrophobicity'] = user_text_df['Sequence'].apply(AMP_functions.list_hydrophobicities)
+        user_text_df['Hydrophobicity'] = user_text_df['Sequence'].apply(AMP_ConvNet_functions.list_hydrophobicities)
         
         # Creae One-Hot Encoded Sequence Column
-        user_text_df['One_Hot_Encoded'] = user_text_df['Sequence'].apply(AMP_functions.one_hot_encode)
+        user_text_df['One_Hot_Encoded'] = user_text_df['Sequence'].apply(AMP_ConvNet_functions.one_hot_encode)
         
         # Set Max Amino Acid Sequence Length
         max_length = 198
 
         # Pad 'One_Hot_Encoded' Column so that all Matrices are the same size (198 x 20)
-        user_text_df['Padded_One_Hot'] = user_text_df['One_Hot_Encoded'].apply(lambda arr_list: AMP_functions.pad_arrays(arr_list, max_length))
+        user_text_df['Padded_One_Hot'] = user_text_df['One_Hot_Encoded'].apply(lambda arr_list: AMP_ConvNet_functions.pad_arrays(arr_list, max_length))
 
         # Take Values for TensorFlow CNN Model
         user_text_sequences = user_text_df['Padded_One_Hot'].values
@@ -84,7 +84,7 @@ def process_text():
         print(results_df)
         
         # Plot Bubble Chart
-        bubble_chart = AMP_functions.create_bubble_chart(results_df)
+        bubble_chart = AMP_ConvNet_functions.create_bubble_chart(results_df)
         
         # Create Plotly Bubble Chart for HTML
         chart_div = pio.to_html(bubble_chart, full_html=False)

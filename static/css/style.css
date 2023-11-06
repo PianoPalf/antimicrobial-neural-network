@@ -5,32 +5,32 @@ body {
     background-image: url('b_and_white_protein.png'); 
     background-size: 50% auto;
     background-size: cover; 
-    background-attachment: fixed; /* Optionally, keep the background fixed */
-    background-color: rgb(255, 255, 255); /* Set the background color with opacity */
+    background-attachment: fixed; 
+    background-color: rgb(255, 255, 255);
 }
 
-/* Style the heading */
+/* Style heading */
 h1 {
     font-weight: 300;
     text-align: left; 
 }
 
-/* Style the form container */
+/* Style form container */
 form {
     font-weight: 300; 
 }
 
-/* Style the text input area */
+/* Style text input area */
 textarea {
     font-weight: 300; 
 }
 
-/* Style the submit button */
+/* Style submit button */
 input[type="submit"] {
     font-weight: 300; 
 }
 
-/* Style the h3 text */
+/* Style h3 text */
 h3 {
     font-weight: 300; 
 }
@@ -39,7 +39,6 @@ h3 {
     background-color: rgb(242, 242, 242, 0.8)
 }
 
-/* styles.css */
 table.dataframe {
     width: 20%;
     border-collapse: collapse;
@@ -58,15 +57,15 @@ table.dataframe th {
     background-color: #f2f2f2;
 }
 
-/* Set specific column widths */
+/* Set column widths */
 table.dataframe th:first-child,
 table.dataframe td:first-child {
-    width: 20%; /* Adjust the width as needed */
+    width: 20%;
 }
 
 table.dataframe th:nth-child(2),
 table.dataframe td:nth-child(2) {
-    width: 40%; /* Adjust the width as needed */
+    width: 40%; 
 }
 
 table.dataframe th {
@@ -82,7 +81,7 @@ table.dataframe th {
 }
 .chart-container {
     width: 90%;
-    margin-left: 40px; /* Adjust the left margin as needed */
+    margin-left: 40px; 
     display: flex;
     align-items: left;
     justify-content: left;
