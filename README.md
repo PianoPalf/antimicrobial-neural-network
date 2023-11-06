@@ -101,7 +101,7 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 - Visualises Validation dataset that contained discrete positive (AMP) and negative (Non-AMP) sequences.
 
-- **Putative and Confirmed AMP / Non-AMPs predicted by AMP ConvNet**:
+- **Putative and Confirmed AMP / Non-AMPs predicted by AMP ConvNet** (score > 0.5 = AMP / score < 0.5 = Non-AMP):
 
   ![validation_charts](Resources/Images/validation_5_epochs_&_dropout.png)
 
