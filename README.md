@@ -143,7 +143,15 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 - Contains custom formatting for `index.html`, `result.html` and `error.html`.
 
+### AMP_ConvNet_model_summary
+
+- Summarises model architecture.
+- Details optimisations made to model.
+- Analyses model performance.
+- Details potential future optimisations to improve the model.
+
 ### Python Folder
+
 - Contains all `.ipynb` and `.py` files (except `app.py`)
 
 ### HDF5_files Folder
@@ -233,7 +241,7 @@ model_fit = model.fit(X_train, y_train, epochs=5, validation_data=(X_test, y_tes
 ```
 anti-microbial-neural-network
 │
-├── AMP_ConvNet_summary.md
+├── AMP_ConvNet_model_summary.md
 ├── HDF5_files
 │   └── convolutional_nn_1.h5
 ├── Python
