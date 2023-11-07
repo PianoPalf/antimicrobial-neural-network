@@ -194,9 +194,7 @@ Project created and run using:
 
 **Landing Page**![index_screenshot](Resources/Images/index_screenshot.png)
 
-#### Results Page
-
-#### ![result_screenshot](Resources/Images/result_screenshot.png)
+**Results Page**![result_screenshot](Resources/Images/result_screenshot.png)
 
 ## Code example
 
