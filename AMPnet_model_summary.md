@@ -1,6 +1,6 @@
 
 
-# AMP ConvNet Model Summary
+# AMPnet Model Summary
 
 TensorFlow and Keras Deep Convolutional Neural Network (ConvNet) that identifies Antimicrobial Peptides (AMPs) based on Amino Acid Sequences.
 
