@@ -1,10 +1,10 @@
-# Antimicrobial Peptide Prediction
+# AMPnet: Antimicrobial Peptide Prediction
 TensorFlow and Keras Deep Convolutional Neural Network (ConvNet) that identifies Antimicrobial Peptides (AMPs) based on Amino Acid Sequences.
 
 Created and submitted as final project for Monash University Data Analytics Boot Camp (November 2023). 
 
 
-![amp_cnn](Resources/Images/convnet_banner.jpg)
+![amp_cnn](Resources/Images/convnet_banner_logo.png)
 
 ## Preface
 
@@ -28,28 +28,28 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 1. Download Repository.
 2. Using Mac/Linux Terminal or Windows Command Prompt:
-   - Change working directory to newly dow Repository folder (`antimicrobial-neural-network-main`.
+   - Change working directory to newly downloaded Repository folder (`antimicrobial-neural-network-main`).
    - Run `app.py` file.
 3. Open Browser and navigate to: `http://127.0.0.1:5000/`
 4. Input FASTA amino acid sequence.
 
 ## General info
 
-### AMP_ConvNet_data_compilation.ipynb
+### AMPnet_data_compilation.ipynb
 
 - Reads in `FASTA` files and converts data to Python `Pandas` DataFrames using `Biopython` library.
 - Creates new `Anti_Microbial` Column for each DataFrame and assigns `1` for AMPs and `0` for Non-AMPs.
-- Concatenates all Training and Test DataFrames into `peptides_df` DataFrame to Train and Test the AMP ConvNet Model.
+- Concatenates all Training and Test DataFrames into `peptides_df` DataFrame to Train and Test the AMPnet Model.
 - Creates Validation DataFrame from separate and independent datasets for an extra Validation step. 
 - Creates new `Sequence_Length` Column and calculates the number of amino acid residues of each peptide.
 - Calculates Kyte-Doolittle scores for each amino acid in each peptide sequence and appends data as new Column (`KD_Scores`) to DataFrame.
 - Exports DataFrames as `CSV` files:
   - `peptides_df` as `peptides.csv` for Training and Testing
-  - `validation_df` as `validation.csv` for additional ConvNet Model Validation.
+  - `validation_df` as `validation.csv` for additional AMPnet Model Validation.
   - `validation_positive.csv` and `validation_negative.csv` files were also generated to facilitate additional Validations.
 
 
-### AMP_ConvNet_deep_learning.ipynb
+### AMPnet_deep_learning.ipynb
 
 - `One-Hot-Encodes` amino acid sequences into 2D Matrix of binary values to facilitate Convolutional Neural Network modelling.
 
@@ -81,7 +81,7 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 - Test Accuracy: `93.69 %` / Test Loss: `0.18`
 
-### AMP_ConvNet_deep_learning_validation.ipynb
+### AMPnet_deep_learning_validation.ipynb
 
 - Reads in `CSV` files as Pandas DataFrames.
 
@@ -91,7 +91,7 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 - Converts input data to `Numpy Arrays`.
 
-- Loads Trained ConvNet TensorFlow and Keras Model.
+- Loads Trained AMPnet TensorFlow and Keras Model.
 
 - Makes Predictions on Validation datasets.
 
@@ -101,13 +101,13 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 - Visualises Validation dataset that contained discrete positive (AMP) and negative (Non-AMP) sequences.
 
-- **Putative and Confirmed AMP / Non-AMPs predicted by AMP ConvNet**:
+- **Putative and Confirmed AMP / Non-AMPs predicted by AMPnet**:
 
   *score > 0.5 = AMP | score < 0.5 = Non-AMP*
   
   ![validation_charts](Resources/Images/validation_5_epochs_&_dropout.png)
 
-### AMP_ConvNet_functions.py
+### AMPnet_functions.py
 
 - Defines **Functions** called in Python Flask file (`app.py`):
   - `process_fasta(user_input)`: parses FASTA Input from user and converts it to Pandas DataFrame.
@@ -145,7 +145,7 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 - Contains custom formatting for `index.html`, `result.html` and `error.html`.
 
-### AMP_ConvNet_model_summary
+### AMPnet_model_summary
 
 - Summarises model architecture.
 - Details optimisations made to model.
@@ -158,7 +158,7 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 ### HDF5_files Folder
 
-- Contains the trained `convolutional_nn_1.h5` ConvNet Model File.
+- Contains the trained `convolutional_nn_1.h5` AMPnet Model File.
 
 ### static Folder
 
@@ -199,7 +199,7 @@ Project created and run using:
 ## Code example
 
 ```python
-## Code Snippet from AMP_ConvNet_deep_learning.ipynb
+## Code Snippet from AMPnet_deep_learning.ipynb
 #################################################
 
 # Build Convolutional Neural Network
@@ -241,17 +241,14 @@ model_fit = model.fit(X_train, y_train, epochs=5, validation_data=(X_test, y_tes
 ```
 anti-microbial-neural-network
 │
-├── AMP_ConvNet_model_summary.md
+├── AMPnet_model_summary.md
 ├── HDF5_files
 │   └── convolutional_nn_1.h5
 ├── Python
-│   ├── AMP_ConvNet_data_compilation.ipynb
-│   ├── AMP_ConvNet_deep_learning.ipynb
-│   ├── AMP_ConvNet_deep_learning_validation.ipynb
-│   ├── AMP_ConvNet_functions.py
-│   └── __pycache__
-│       ├── AMP_ConvNet_functions.cpython-310.pyc
-│       └── AMP_functions.cpython-310.pyc
+│   ├── AMPnet_data_compilation.ipynb
+│   ├── AMPnet_deep_learning.ipynb
+│   ├── AMPnet_deep_learning_validation.ipynb
+│   └── AMPnet_functions.py      
 ├── README.md
 ├── Resources
 │   ├── AMPlify_AMP_test_common.fa
@@ -259,11 +256,13 @@ anti-microbial-neural-network
 │   ├── Images
 │   │   ├── AMP_CNN_LeNet.png
 │   │   ├── AMP_CNN_structure.png
+│   │   ├── ampnet_logo.png
+│   │   ├── classification_report.png
+│   │   ├── confusion_matrix.png
 │   │   ├── convnet_banner.jpg
-│   │   ├── convnet_banner_2.png
-│   │   ├── convnet_banner_3.png
-│   │   ├── convnet_banner_4.png
+│   │   ├── convnet_banner_logo.png
 │   │   ├── index_screenshot.png
+│   │   ├── model_structure.png
 │   │   ├── result_screenshot.png
 │   │   ├── training_10_epochs.png
 │   │   ├── training_5_epochs_&_dropout.png
@@ -281,14 +280,13 @@ anti-microbial-neural-network
 ├── app.py
 ├── static
 │   └── css
+│       ├── ampnet_logo.png
 │       ├── b_and_white_protein.png
 │       └── style.css
 └── templates
     ├── error.html
     ├── index.html
     └── result.html
-
-9 directories, 39 files
 ```
 
 ## References
