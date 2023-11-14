@@ -145,7 +145,7 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 - Contains custom formatting for `index.html`, `result.html` and `error.html`.
 
-### AMPnet_model_summary
+### AMPnet_model_summary.md
 
 - Summarises model architecture.
 - Details optimisations made to model.

@@ -73,7 +73,6 @@ table.dataframe th {
 }
 
 .table {
-    
     display: flex;
     align-items: left;
     justify-content: left;
@@ -97,8 +96,8 @@ table.dataframe th {
   }
 
   .logo {
-    width: 99px; /* Set the width of the div */
-    height: 99px; /* Set the height of the div */
+    width: 95px; /* Set the width of the div */
+    height: 105px; /* Set the height of the div */
     background-image: url('ampnet_logo.png');
     background-size: 100% 100%; /* This will scale the image to fit the div */
     /*display: inline-block;*/
