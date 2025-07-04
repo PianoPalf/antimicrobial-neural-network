@@ -298,14 +298,8 @@ anti-microbial-neural-network
   
   - Validation data:
     - [AMPlify - Li et al. 2022](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-022-08310-4)
-  
 - **LeNet Diagram generation**:
   - [NN-SVG - LeNail 2019](https://web.archive.org/web/20190428110423id_/https://www.theoj.org/joss-papers/joss.00747/10.21105.joss.00747.pdf)
-- Created with assistance from [OpenAI (2023) **ChatGPT**](https://www.openai.com/chatgpt) - Version: GPT-3.5 - November 2023: 
-  - Function: `one_Hot_encode(sequence)`; and 
-  - Function:`pad_array(arr_list, desired_len)`
-  - HTML and CSS code.
-  
 - Code, where appropriate, was adapted from Monash University Data Analytics Boot Camp 2023 course learning material.
 
 Created and written by Samuel Palframan - November 2023.
