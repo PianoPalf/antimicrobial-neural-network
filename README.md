@@ -1,7 +1,7 @@
 # AMPnet: Antimicrobial Peptide Prediction
-TensorFlow and Keras Deep Convolutional Neural Network (ConvNet) that identifies Antimicrobial Peptides (AMPs) based on Amino Acid Sequences.
+A TensorFlow and Keras deep Convolutional Neural Network (CNN) that identifies Antimicrobial Peptides (AMPs) based on amino acid sequences.
 
-Created and submitted as final project for Monash University Data Analytics Boot Camp (November 2023). 
+Created and submitted as the final project for Monash University Data Analytics Boot Camp (November 2023). 
 
 
 ![amp_cnn](Resources/Images/convnet_banner_logo.png)
@@ -10,9 +10,9 @@ Created and submitted as final project for Monash University Data Analytics Boot
 
 Antibiotic-resistant bacteria have emerged as one of the greatest threats to human health globally. By the year 2050, there will be more deaths attributed to antibiotic-resistant bacterial infections than cancer each year. Our overuse and over-reliance on antibiotics has, over time, dramatically reduced their effectiveness and efficacy ([Murray et al. 2022](https://www.sciencedirect.com/science/article/pii/S0140673621027240?pes=vor)). As such, the development of new and alternative antimicrobial therapies is essential to human health long-term. 
 
-Antimicrobial peptides (AMPs) possess broad-spectrum antimicrobial properties and are considered a promising substitute for current antibiotics ([Xuan et al. 2023](https://www.sciencedirect.com/science/article/pii/S1368764623000377#bib84)). However, screening unknown and/or putative AMPs in wet laboratories can be time-consuming, expensive and difficult to implement large-scale. An alternative and more rapid approach is to use Deep Neural Network Machine Learning to identify peptides that possess antimicrobial properties based on various features. 
+Antimicrobial peptides (AMPs) possess broad-spectrum antimicrobial properties and are considered a promising substitute for current antibiotics ([Xuan et al. 2023](https://www.sciencedirect.com/science/article/pii/S1368764623000377#bib84)). However, screening unknown and/or putative AMPs in wet laboratories can be time consuming, expensive and difficult to implement large scale. An alternative and more rapid approach is to use deep neural network machine learning to identify peptides that possess antimicrobial properties based on various features. 
 
-This project uses a Deep Convolutional Neural Network Model to classify peptides as AMPs or Non-AMPs based on amino acid sequence. 
+This project uses a deep Convolutional Neural Network model to classify peptides as AMPs or Non-AMPs based on amino acid sequence. 
 
 ## Table of Contents
 
@@ -26,12 +26,23 @@ This project uses a Deep Convolutional Neural Network Model to classify peptides
 
 ## Instructions
 
-1. Download Repository.
-2. Using Mac/Linux Terminal or Windows Command Prompt:
-   - Change working directory to newly downloaded Repository folder (`antimicrobial-neural-network-main`).
-   - Run `app.py` file.
-3. Open Browser and navigate to: `http://127.0.0.1:5000/`
-4. Input FASTA amino acid sequence.
+- Use [AMPnet](https://antimicrobial-neural-network-app-palframan.streamlit.app) hosted by Streamlit; or
+
+- Run on your own computer:
+
+  1. Download Repository.
+
+  2. Using Mac/Linux Terminal or Windows WSL Command Prompt:
+
+     - Install Python libraries listed in [Technologies](#technologies).
+
+     - Change working directory to newly downloaded Repository folder (`path/to/antimicrobial-neural-network-main`).
+
+     - Run `app.py` file.
+
+  3. Open Browser and navigate to: `http://127.0.0.1:5000/`
+
+  4. Input FASTA amino acid sequence.
 
 ## General info
 
@@ -298,6 +309,7 @@ anti-microbial-neural-network
   
   - Validation data:
     - [AMPlify - Li et al. 2022](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-022-08310-4)
+  
 - **LeNet Diagram generation**:
   - [NN-SVG - LeNail 2019](https://web.archive.org/web/20190428110423id_/https://www.theoj.org/joss-papers/joss.00747/10.21105.joss.00747.pdf)
 - Code, where appropriate, was adapted from Monash University Data Analytics Boot Camp 2023 course learning material.
