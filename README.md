@@ -34,7 +34,7 @@ This project uses a deep Convolutional Neural Network model to classify peptides
 
   2. Using Mac/Linux Terminal or Windows WSL Command Prompt:
 
-     - Install Python libraries listed in [Technologies](#technologies).
+     - Install Python libraries listed in [Technologies](#technologies) in a virtual environment (eg. using anaconda or another package manager).
 
      - Change working directory to newly downloaded Repository folder (`path/to/antimicrobial-neural-network-main`).
 
